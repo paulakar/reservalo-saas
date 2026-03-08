@@ -21,14 +21,19 @@ Reservalo is a SaaS reservation platform built to handle booking workflows, auth
 
 ## Architecture
 
-Frontend  
-↓  
-Backend API  
-↓  
-PostgreSQL  
-↓  
-Cloud infrastructure
+## Architecture Diagram
 
+```mermaid
+flowchart TD
+    U[User] --> F[Frontend Application]
+    F --> A[Backend API]
+    A --> AU[Authentication Layer]
+    A --> DB[(PostgreSQL Database)]
+    A --> G[Google Sign-In]
+    A --> C[Cloud Infrastructure]
+
+    AU --> DB
+    G --> AU
 ## Tech Stack
 
 - Node.js
